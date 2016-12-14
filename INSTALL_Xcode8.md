@@ -27,9 +27,13 @@ Since Apple decided not to load 3rd party plugins, we have to make change to it.
 
    Then in a terminal,
 
-         $ sudo codesign -f -s XcodeSigner /Applications/Xcode.app    (Replace the Xcode path if it is different.)
+         sudo codesign -f -s XcodeSigner /Applications/Xcode.app    # (Replace the Xcode path if it is different.)
 
    This should take a while.
+   
+   Note that if you use your apple certifiate you have to substitute `XcodeSigner` with the name of the certificate
+   
+         sudo codesign -f - s 'Mac Developer: <Your Name> (XXXXXXXXX)' /Applications/Xcode.app
    
 4. Build XVim
 
